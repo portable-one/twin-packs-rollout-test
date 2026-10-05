@@ -9,7 +9,7 @@ assert.equal(files.length, 1, 'release contains exactly one immutable package');
 const integrity = 'sha512-' + createHash('sha512').update(readFileSync(join('release', files[0]))).digest('base64');
 assert.ok(process.env.RUNNER_TEMP, 'publisher workflow supplies a disposable output directory');
 const output = join(process.env.RUNNER_TEMP, 'catalog-submissions');
-const prepared = spawnSync(process.execPath, [process.env.CATALOG_CLI ?? 'node_modules/@volter/twin-catalog-rollout-test/bin/twin-catalog.mjs', 'submit', '--confirm-published', '--source', 'twin-packs-rollout-test', '--vendor', 'tavily', '--package', pkg.name, '--version', pkg.version, '--out-dir', output], { encoding: 'utf8' });
+const prepared = spawnSync(process.execPath, [process.env.CATALOG_CLI ?? 'node_modules/@volter/twin-catalog-rollout-test/bin/twin-catalog.mjs', 'submit', '--confirm-published', '--source', 'portable-packs-rollout-test', '--vendor', 'tavily', '--package', pkg.name, '--version', pkg.version, '--out-dir', output], { encoding: 'utf8' });
 assert.equal(prepared.status, 0, prepared.stderr);
 const result = JSON.parse(prepared.stdout);
 assert.equal(result.submission.integrity, integrity, 'registry bytes differ from the uploaded release');

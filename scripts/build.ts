@@ -20,4 +20,4 @@ assert.deepEqual(facts.undeclared, []);
 mkdirSync('tavily/generated', { recursive: true });
 writeFileSync('tavily/generated/pack-facts.json', JSON.stringify(facts, null, 2) + '\n');
 const manifest = JSON.parse(readFileSync('tavily/package.json', 'utf8'));
-assert.equal(manifest.name, '@volter/twin-rollout-test-tavily');
+assert.equal(manifest.name, '@volter/twin-portable-rollout-test-tavily');

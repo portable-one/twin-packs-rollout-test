@@ -45,20 +45,6 @@ jobs:
         env:
           CATALOG_CLI: ${{ runner.temp }}/catalog-cli/node_modules/@volter/twin-catalog-rollout-test/bin/twin-catalog.mjs
         run: node scripts/prepare-submission.mjs
-      - name: Mint target-repository proposal token
-        id: catalog-proposal
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1
-        with:
-          client-id: ${{ vars.CATALOG_PR_APP_CLIENT_ID }}
-          private-key: ${{ secrets.CATALOG_PR_APP_PRIVATE_KEY }}
-          owner: volter-ai
-          repositories: twin-catalog-rollout-test
-          permission-contents: write
-          permission-pull-requests: write
-      - name: Propose retained data without approval or merge
-        env:
-          GH_TOKEN: ${{ steps.catalog-proposal.outputs.token }}
-        run: node "$RUNNER_TEMP/catalog-cli/node_modules/@volter/twin-catalog-rollout-test/bin/twin-catalog.mjs" propose --repository volter-ai/twin-catalog-rollout-test --from "$RUNNER_TEMP/catalog-submissions" --send
       - uses: actions/upload-artifact@v4
         if: always()
         with:

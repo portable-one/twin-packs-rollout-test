@@ -1,6 +1,6 @@
 {
-  "name": "@volter/twin-rollout-test-tavily",
-  "version": "0.0.2",
+  "name": "@volter/twin-portable-rollout-test-tavily",
+  "version": "0.0.1",
   "description": "Tavily twin (Protocol 3): search over the World's web by lexical overlap, with a labeled stub answer (no web is searched, no model runs), and API keys. Built on @volter/world-core.",
   "keywords": [
     "twin",
@@ -21,10 +21,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/volter-ai/twin-packs-rollout-test.git",
+    "url": "git+https://github.com/portable-one/twin-packs-rollout-test.git",
     "directory": "tavily"
   },
-  "homepage": "https://github.com/volter-ai/twin-packs-rollout-test/tree/main/tavily#readme",
+  "homepage": "https://github.com/portable-one/twin-packs-rollout-test/tree/main/tavily#readme",
   "type": "module",
   "exports": {
     ".": "./dist/src/index.js"
