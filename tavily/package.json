@@ -1,6 +1,6 @@
 {
   "name": "@volter/twin-rollout-test-tavily",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tavily twin (Protocol 3): search over the World's web by lexical overlap, with a labeled stub answer (no web is searched, no model runs), and API keys. Built on @volter/world-core.",
   "keywords": [
     "twin",
