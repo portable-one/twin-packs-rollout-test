@@ -8,7 +8,7 @@ const registry = 'https://registry.npmjs.org';
 const pkg = JSON.parse(readFileSync('tavily/package.json', 'utf8'));
 const files = readdirSync('release').filter((name) => name.endsWith('.tgz'));
 if (files.length !== 1) throw new Error('release must contain one immutable package');
-const archive = join('release', files[0]);
+const archive = resolve('release', files[0]);
 const integrity = 'sha512-' + createHash('sha512').update(readFileSync(archive)).digest('base64');
 const cli = process.env.CATALOG_CLI;
 if (!cli) throw new Error('CATALOG_CLI must name the exact installed bootstrap CLI');
